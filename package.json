@@ -72,7 +72,7 @@
 		"@types/koa__router": "8.0.7",
 		"@types/markdown-it": "12.0.3",
 		"@types/matter-js": "0.17.5",
-		"@types/mocha": "8.2.3",
+		"@types/mocha": "9.0.0",
 		"@types/node": "16.6.2",
 		"@types/node-fetch": "2.5.12",
 		"@types/nodemailer": "6.4.4",
@@ -245,7 +245,7 @@
 		"xev": "2.0.1"
 	},
 	"devDependencies": {
-		"@redocly/openapi-core": "1.0.0-beta.44",
+		"@redocly/openapi-core": "1.0.0-beta.54",
 		"@types/fluent-ffmpeg": "2.1.17",
 		"cross-env": "7.0.3",
 		"cypress": "8.3.0",
