@@ -42,7 +42,7 @@
 		"@koa/cors": "3.1.0",
 		"@koa/multer": "3.0.0",
 		"@koa/router": "9.0.1",
-		"@sentry/browser": "5.29.2",
+		"@sentry/browser": "6.11.0",
 		"@sentry/tracing": "5.29.2",
 		"@sinonjs/fake-timers": "7.1.2",
 		"@syuilo/aiscript": "0.11.1",
@@ -245,7 +245,7 @@
 		"xev": "2.0.1"
 	},
 	"devDependencies": {
-		"@redocly/openapi-core": "1.0.0-beta.44",
+		"@redocly/openapi-core": "1.0.0-beta.54",
 		"@types/fluent-ffmpeg": "2.1.17",
 		"cross-env": "7.0.3",
 		"cypress": "8.3.0",
