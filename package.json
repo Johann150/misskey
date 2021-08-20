@@ -238,14 +238,14 @@
 		"vue-svg-loader": "0.17.0-beta.2",
 		"vuedraggable": "4.0.1",
 		"web-push": "3.4.5",
-		"webpack": "5.51.0",
+		"webpack": "5.51.1",
 		"webpack-cli": "4.8.0",
 		"websocket": "1.0.34",
 		"ws": "8.2.0",
 		"xev": "2.0.1"
 	},
 	"devDependencies": {
-		"@redocly/openapi-core": "1.0.0-beta.44",
+		"@redocly/openapi-core": "1.0.0-beta.54",
 		"@types/fluent-ffmpeg": "2.1.17",
 		"cross-env": "7.0.3",
 		"cypress": "8.3.0",
