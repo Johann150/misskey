@@ -90,7 +90,7 @@
 		"@types/rename": "1.0.4",
 		"@types/request-stats": "3.0.0",
 		"@types/rimraf": "3.0.2",
-		"@types/seedrandom": "2.4.28",
+		"@types/seedrandom": "3.0.1",
 		"@types/sharp": "0.28.5",
 		"@types/sinonjs__fake-timers": "6.0.3",
 		"@types/speakeasy": "2.0.6",
@@ -245,7 +245,7 @@
 		"xev": "2.0.1"
 	},
 	"devDependencies": {
-		"@redocly/openapi-core": "1.0.0-beta.44",
+		"@redocly/openapi-core": "1.0.0-beta.54",
 		"@types/fluent-ffmpeg": "2.1.17",
 		"cross-env": "7.0.3",
 		"cypress": "8.3.0",
