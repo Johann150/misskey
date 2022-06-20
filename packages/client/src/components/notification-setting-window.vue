@@ -29,7 +29,7 @@
 
 <script lang="ts" setup>
 import { } from 'vue';
-import { notificationTypes } from 'misskey-js';
+import * as misskey from 'misskey-js';
 import MkSwitch from './form/switch.vue';
 import MkInfo from './ui/info.vue';
 import MkButton from './ui/button.vue';
@@ -42,10 +42,12 @@ const emit = defineEmits<{
 }>();
 
 const props = withDefaults(defineProps<{
-	includingTypes?: typeof notificationTypes[number][] | null;
+	includingTypes?: typeof misskey.notificationTypes[number][] | null;
+	notificationTypes?: typeof misskey.notificationTypes[number][] | null;
 	showGlobalToggle?: boolean;
 }>(), {
 	includingTypes: () => [],
+	notificationTypes: () => [],
 	showGlobalToggle: true,
 });
 
@@ -53,10 +55,10 @@ let includingTypes = $computed(() => props.includingTypes || []);
 
 const dialog = $ref<InstanceType<typeof XModalWindow>>();
 
-let typesMap = $ref<Record<typeof notificationTypes[number], boolean>>({});
+let typesMap = $ref<Record<typeof misskey.notificationTypes[number], boolean>>({});
 let useGlobalSetting = $ref((includingTypes === null || includingTypes.length === 0) && props.showGlobalToggle);
 
-for (const ntype of notificationTypes) {
+for (const ntype of props.notificationTypes) {
 	typesMap[ntype] = includingTypes.includes(ntype);
 }
 
@@ -65,7 +67,7 @@ function ok() {
 		emit('done', { includingTypes: null });
 	} else {
 		emit('done', {
-			includingTypes: (Object.keys(typesMap) as typeof notificationTypes[number][])
+			includingTypes: (Object.keys(typesMap) as typeof misskey.notificationTypes[number][])
 				.filter(type => typesMap[type]),
 		});
 	}
@@ -75,13 +77,13 @@ function ok() {
 
 function disableAll() {
 	for (const type in typesMap) {
-		typesMap[type as typeof notificationTypes[number]] = false;
+		typesMap[type as typeof misskey.notificationTypes[number]] = false;
 	}
 }
 
 function enableAll() {
 	for (const type in typesMap) {
-		typesMap[type as typeof notificationTypes[number]] = true;
+		typesMap[type as typeof misskey.notificationTypes[number]] = true;
 	}
 }
 </script>
