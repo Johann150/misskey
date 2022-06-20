@@ -18,7 +18,7 @@
 			</MkSwitch>
 		</div>
 		<div v-if="!useGlobalSetting" class="_section">
-			<MkInfo>{{ i18n.ts.notificationSettingDesc }}</MkInfo>
+			<MkInfo>{{ message }}</MkInfo>
 			<MkButton inline @click="disableAll">{{ i18n.ts.disableAll }}</MkButton>
 			<MkButton inline @click="enableAll">{{ i18n.ts.enableAll }}</MkButton>
 			<MkSwitch v-for="ntype in notificationTypes" :key="ntype" v-model="typesMap[ntype]">{{ i18n.t(`_notification._types.${ntype}`) }}</MkSwitch>
@@ -45,10 +45,12 @@ const props = withDefaults(defineProps<{
 	includingTypes?: typeof misskey.notificationTypes[number][] | null;
 	notificationTypes?: typeof misskey.notificationTypes[number][] | null;
 	showGlobalToggle?: boolean;
+	message?: string,
 }>(), {
 	includingTypes: () => [],
 	notificationTypes: () => [],
 	showGlobalToggle: true,
+	message: i18n.ts.notificationSettingDesc,
 });
 
 let includingTypes = $computed(() => props.includingTypes || []);
