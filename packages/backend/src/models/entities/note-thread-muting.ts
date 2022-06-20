@@ -2,6 +2,7 @@ import { PrimaryColumn, Entity, Index, JoinColumn, Column, ManyToOne } from 'typ
 import { User } from './user.js';
 import { Note } from './note.js';
 import { id } from '../id.js';
+import { noteNotificationTypes } from '@/types.js';
 
 @Entity()
 @Index(['userId', 'threadId'], { unique: true })
@@ -30,4 +31,11 @@ export class NoteThreadMuting {
 		length: 256,
 	})
 	public threadId: string;
+
+	@Column('enum', {
+		enum: noteNotificationTypes,
+		array: true,
+		default: [],
+	})
+	public mutingNotificationTypes: typeof notificationTypes[number][];
 }
